@@ -1,0 +1,118 @@
+/* ********* FONT-FAMILY LINK ****************** */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@700&display=swap');
+/* ********* /FONT-FAMILY LINK ****************** */
+
+/* ********* PAGE RESET ****************** */
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ********* /PAGE RESET ****************** */
+
+h3{
+    text-align: center;
+}
+
+/* ********* BASIC CSS VARIABLES ****************** */
+:root {
+  /* ********* COLORS ******** */
+    --Pri-color-400: 263 55% 52%;
+    --second-color-400: 217 19% 35%;
+    --second-color-500: 219 29% 14%;
+    --neut-color-100: 0 0% 100%;
+    --neut-color-200: 210 46% 95%;
+    --neut-color-300: 0 0% 81%;
+    /* ********* /COLORS ******** */
+  
+    /* ********* FONT FAMILIES ******** */
+    --font-family-pri: "Barlow Semi Condensed", sans-serif;
+    /* ********* /FONT FAMILIES ******** */
+  
+    /* ********* FONT WEIGHTS ******** */
+    --font-weight-medium: 500;
+    --font-weight-big: 600;
+    /* ********* /FONT WEIGHTS ******** */
+  
+    /* ********* FONT SIZES ******** */
+    --font-size-small: 1.5rem;
+    --font-size-medium: 0.98rem;
+    --font-size-big: 1.3rem;
+    /* ********* /FONT SIZES ******** */
+  }
+  /* ********* /BASIC CSS VARIABLES ****************** */
+
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+/* ======== PARENT CONTAINER GRID ========== */
+.profile-desc{
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 
+    'first'
+    'second'
+    'third'
+    'fourth'
+    'fifth';
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+  color: #fff; 
+}
+.profile-menu{
+  display: flex;
+  gap: 1.5rem;
+}
+.profile{
+  font-size: var(--font-size-medium);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--second-color-400) / 0.25);
+}
+div.profile-title > h2.name, 
+div.profile-title > p.status{
+  margin: 0;
+}
+.profile:nth-child(1){
+  background: rgb(51, 3, 3);
+  grid-area: first;
+}
+.profile:nth-child(2) {
+  background: rgb(0, 50, 0);
+  grid-area: second;
+}
+.profile:nth-child(3) {
+  background: #333;
+  grid-area: third;
+}
+.profile:nth-child(4) {
+  background: #111;
+  grid-area: fourth;
+}
+.profile:nth-child(5){
+  background: rgb(16, 43, 16);
+  grid-area: fifth;
+}
+@media (min-width: 30em){
+  .profile-desc{
+    grid-template-areas: 
+      'first first'
+      'second fifth'
+      'third  fifth'
+      'fourth fourth';
+  }
+}
+
+/* ======== MEDIA QUERY ========== */
+@media (min-width: 50em){
+  .profile-desc{
+    grid-template-areas: 
+      'first first second fifth'
+      'third fourth fourth fifth';
+  }
+}
